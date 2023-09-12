@@ -1,0 +1,12 @@
+show databases; = mostrar todos bancos de dados
+create database (nome); = Para criar uma data base 
+
+
+
+
+
+
+CREATE TABLE `historico_carros` (
+  `historico_id` INT NOT NULL AUTO_INCREMENT,
+  `placa` VARCHAR(7) NOT NULL,
+  PRIMARY KEY (`historico_id`));
