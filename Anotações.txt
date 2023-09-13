@@ -2,11 +2,52 @@ show databases; = mostrar todos bancos de dados
 create database (nome); = Para criar uma data base 
 
 
-
-
+============================================================
 
 
 CREATE TABLE `historico_carros` (
   `historico_id` INT NOT NULL AUTO_INCREMENT,
   `placa` VARCHAR(7) NOT NULL,
   PRIMARY KEY (`historico_id`));
+
+
+
+
+INSERT INTO `escola`.`aluno`
+(`nome`,`sobrenome`)
+values
+('Walter','Pasold'),
+('caio','santos'),
+('pedro','souza');
+
+select * from aluno;
+
+INSERT INTO `escola`.`boletim`
+(`nota1`,`nota2`, `nota3`, `id_aluno`)
+values
+('1','2', '9',1),
+('10','8','6',2),
+('10','10', '10',3);
+
+select  a.nome,
+		a.sobrenome,
+        round((b.nota1+b.nota2+b.nota3) / 3)
+from	aluno a,
+		boletim b
+where	a.id_aluno = b.id_aluno
+and round((b.nota1+b.nota2+b.nota3) / 3)>= 7;
+
+INSERT INTO escola . diario_turma
+(presenca, id_aluno)
+values
+(2, 1),
+(2, 2),
+(2, 3);
+
+select * from diario_turma
+
+UPDATE escola.diario_turma set presenca = 2 where presenca = 1;
+
+select * from diario_turma
+
+
